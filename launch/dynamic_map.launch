@@ -1,0 +1,15 @@
+<launch>
+
+ <!-- <arg name="scene_num" default="noupdate" /> -->
+ <!-- <arg name="path_area_list" default='""' /> -->
+ <arg name="pcd_paths" default='"/home/autoware/shared_dir/data/kcity/points_map/kcity_20190629_0.2_update.pcd"' />
+
+ <node pkg="dynamic_map" type="dynamic_map" name="dynamic_map" output="screen">
+  <rosparam subst_value="true">
+    <!-- area: $(arg scene_num) -->
+    <!-- arealist_path: $(arg path_area_list) -->
+    pcd_paths: [ $(arg pcd_paths) ]
+  </rosparam>
+ </node>
+ 
+</launch>
